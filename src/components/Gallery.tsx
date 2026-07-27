@@ -31,9 +31,10 @@ export default function Gallery() {
               <Image
                 src={photo.src}
                 alt={photo.alt}
-                fill
+                width={photo.width}
+                height={photo.height}
                 sizes="(max-width: 700px) 50vw, 25vw"
-                style={{ objectFit: "cover" }}
+                style={{ width: "100%", height: "auto" }}
               />
               <span className="g-zoom">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
