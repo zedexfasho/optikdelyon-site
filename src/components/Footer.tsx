@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -6,20 +8,8 @@ export default function Footer() {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
-            <a href="#accueil" className="brand" aria-label="Optik de Lyon — accueil">
-              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8-13-8-13-8z"
-                  stroke="#FFFFFF"
-                  strokeWidth="1.6"
-                  strokeLinejoin="round"
-                />
-                <circle cx="16" cy="16" r="3.6" fill="#E30613" />
-              </svg>
-              <span className="brand-word" style={{ color: "var(--on-ink)" }}>
-                OPTIK
-              </span>
-              <span className="brand-word2">de Lyon</span>
+            <a href="#accueil" className="brand" aria-label="Optic de Lyon — accueil">
+              <Image src="/images/brand/logo.png" alt="Optic de Lyon" width={280} height={180} className="brand-logo" />
             </a>
             <p>
               Opticien &amp; expert visuel à Liberté 6 Extension, Dakar. Montures sélectionnées avec soin, examens

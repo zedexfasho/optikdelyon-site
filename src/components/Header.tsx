@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { useWhatsAppBooking } from "./WhatsAppBooking";
 
 const NAV_LINKS = [
@@ -68,19 +69,8 @@ export default function Header() {
     <>
       <header className={`site-header${isScrolled ? " is-scrolled" : ""}`} id="siteHeader" ref={headerRef}>
         <div className="container nav-row">
-          <a href="#accueil" className="brand" aria-label="Optik de Lyon — accueil">
-            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                className="ic-stroke"
-                d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8-13-8-13-8z"
-                stroke="var(--white-soft)"
-                strokeWidth="1.6"
-                strokeLinejoin="round"
-              />
-              <circle className="ic-pupil" cx="16" cy="16" r="3.6" fill="var(--red)" />
-            </svg>
-            <span className="brand-word">OPTIK</span>
-            <span className="brand-word2">de Lyon</span>
+          <a href="#accueil" className="brand" aria-label="Optic de Lyon — accueil">
+            <Image src="/images/brand/logo.png" alt="Optic de Lyon" width={280} height={180} priority className="brand-logo" />
           </a>
           <nav className="nav-links" aria-label="Navigation principale" ref={navRef}>
             {NAV_LINKS.map((link) => (
