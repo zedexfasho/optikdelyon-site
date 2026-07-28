@@ -88,11 +88,7 @@ export function WhatsAppBookingProvider({ children }: { children: React.ReactNod
     return msg;
   }
 
-  function handleSend() {
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(buildMessage())}`;
-    window.open(url, "_blank", "noopener");
-    close();
-  }
+  const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(buildMessage())}`;
 
   return (
     <WhatsAppBookingContext.Provider value={{ openBooking }}>
@@ -166,12 +162,21 @@ export function WhatsAppBookingProvider({ children }: { children: React.ReactNod
             maxLength={40}
           />
 
-          <button type="button" className="btn btn-red wa-send" onClick={handleSend} disabled={!reason}>
-            Continuer sur WhatsApp
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg>
-          </button>
+          {reason ? (
+            <a href={waLink} target="_blank" rel="noopener" className="btn btn-red wa-send" onClick={close}>
+              Continuer sur WhatsApp
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+          ) : (
+            <button type="button" className="btn btn-red wa-send" disabled>
+              Continuer sur WhatsApp
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </button>
+          )}
           {!reason && <p className="wa-hint">Choisissez d&apos;abord un besoin ci-dessus.</p>}
         </div>
       </div>

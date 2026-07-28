@@ -8,8 +8,8 @@ export default function Footer() {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
-            <a href="#accueil" className="brand" aria-label="Optic de Lyon — accueil">
-              <Image src="/images/brand/logo.png" alt="Optic de Lyon" width={280} height={180} className="brand-logo" />
+            <a href="#accueil" className="brand" aria-label="Optik de Lyon — accueil">
+              <Image src="/images/brand/logo.png" alt="Optik de Lyon" width={825} height={350} className="brand-logo" />
             </a>
             <p>
               Opticien &amp; expert visuel à Liberté 6 Extension, Dakar. Montures sélectionnées avec soin, examens

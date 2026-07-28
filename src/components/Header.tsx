@@ -69,8 +69,8 @@ export default function Header() {
     <>
       <header className={`site-header${isScrolled ? " is-scrolled" : ""}`} id="siteHeader" ref={headerRef}>
         <div className="container nav-row">
-          <a href="#accueil" className="brand" aria-label="Optic de Lyon — accueil">
-            <Image src="/images/brand/logo.png" alt="Optic de Lyon" width={280} height={180} priority className="brand-logo" />
+          <a href="#accueil" className="brand" aria-label="Optik de Lyon — accueil">
+            <Image src="/images/brand/logo.png" alt="Optik de Lyon" width={825} height={350} priority className="brand-logo" />
           </a>
           <nav className="nav-links" aria-label="Navigation principale" ref={navRef}>
             {NAV_LINKS.map((link) => (
