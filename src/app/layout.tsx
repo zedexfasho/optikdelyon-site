@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif, Manrope } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import ScrollProgress from "@/components/ScrollProgress";
 import LensCursor from "@/components/LensCursor";
@@ -14,17 +14,27 @@ import SectionRail from "@/components/SectionRail";
 import { WhatsAppBookingProvider } from "@/components/WhatsAppBooking";
 import { SITE_URL } from "@/lib/site";
 
-const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
+// Polices hébergées localement (fichiers dans src/app/fonts) plutôt que via
+// next/font/google : ça évite toute dépendance réseau vers Google Fonts au
+// moment du build/dev (source des blocages "Request timed out" sur certains
+// réseaux d'entreprise ou connexions filtrées).
+const instrumentSerif = localFont({
+  src: [
+    { path: "./fonts/instrument-serif-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/instrument-serif-400-italic.woff2", weight: "400", style: "italic" },
+  ],
   variable: "--font-display-raw",
   display: "swap",
 });
 
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+const manrope = localFont({
+  src: [
+    { path: "./fonts/manrope-400.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/manrope-500.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/manrope-600.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/manrope-700.woff2", weight: "700", style: "normal" },
+    { path: "./fonts/manrope-800.woff2", weight: "800", style: "normal" },
+  ],
   variable: "--font-body-raw",
   display: "swap",
 });
