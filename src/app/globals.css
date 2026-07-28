@@ -155,9 +155,9 @@ section[id]{scroll-margin-top:88px;}
   transition:transform .35s var(--ease),box-shadow .35s var(--ease),padding .4s var(--ease);
 }
 .brand:hover{transform:translateY(-2px);}
-.brand-logo{display:block;height:50px;width:auto;}
+.brand-logo{display:block;height:68px;width:auto;}
 .is-scrolled .brand{padding:6px 14px;}
-.is-scrolled .brand-logo{height:42px;}
+.is-scrolled .brand-logo{height:56px;}
 
 .nav-links{display:flex;align-items:center;gap:38px;}
 .nav-links a:not(.btn){
